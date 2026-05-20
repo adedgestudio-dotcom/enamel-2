@@ -35,9 +35,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2 sm:gap-3 group">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-navy-900 to-navy-700 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-navy-900 to-navy-700 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-gold-400"
+                className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gold-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -47,14 +47,14 @@ export default function Navbar() {
             </div>
             <div>
               <div
-                className={`font-display font-bold text-sm sm:text-base lg:text-lg leading-tight ${
+                className={`font-display font-bold text-sm sm:text-base lg:text-xl leading-tight ${
                   scrolled ? "text-navy-900" : "text-white"
                 }`}
               >
                 {client.name}
               </div>
               <div
-                className={`text-[10px] sm:text-xs ${
+                className={`text-[10px] sm:text-xs lg:text-sm ${
                   scrolled ? "text-navy-600" : "text-white/80"
                 }`}
               >

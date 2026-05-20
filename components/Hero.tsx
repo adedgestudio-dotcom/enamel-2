@@ -156,18 +156,18 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator - hidden on mobile */}
+      {/* Scroll indicator - visible on all screens */}
       <div
-        className={`hidden sm:block absolute bottom-10 left-1/2 -translate-x-1/2 transition-opacity duration-500 ${
+        className={`absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 transition-opacity duration-500 ${
           scrolled ? "opacity-0" : "opacity-100"
         }`}
       >
         <div className="flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-navy-400 text-sm font-medium">
+          <span className="text-navy-400 text-xs sm:text-sm font-medium">
             Scroll to explore
           </span>
           <div className="w-6 h-10 border-2 border-navy-300 rounded-full flex justify-center p-1">
-            <div className="w-1 h-2 bg-navy-400 rounded-full" />
+            <div className="w-1 h-2 bg-navy-400 rounded-full animate-scroll" />
           </div>
         </div>
       </div>
