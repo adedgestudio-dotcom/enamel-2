@@ -95,7 +95,7 @@ export default function Navbar() {
             {!scrolled && !mobileMenuOpen && (
               <a
                 href={`tel:${client.phone}`}
-                className="p-2 rounded-lg bg-white/10 backdrop-blur-md text-white border border-white/20 transition-all"
+                className="p-2.5 rounded-xl bg-white text-navy-900 shadow-lg hover:shadow-xl transition-all hover:scale-105"
                 aria-label="Call now"
               >
                 <svg
