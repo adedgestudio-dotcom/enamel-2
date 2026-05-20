@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white pt-20 sm:pt-0"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white pt-22 sm:pt-26 lg:pt-28"
     >
       {/* Modern geometric background */}
       <div className="absolute inset-0 overflow-hidden">
