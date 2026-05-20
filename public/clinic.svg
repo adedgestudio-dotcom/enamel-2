@@ -1,0 +1,15 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f3278;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3d5db8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg3)"/>
+  <text x="50%" y="45%" font-family="Arial, sans-serif" font-size="48" fill="#E2C97E" text-anchor="middle" font-weight="bold">
+    Treatment Room
+  </text>
+  <text x="50%" y="55%" font-family="Arial, sans-serif" font-size="32" fill="#ffffff" text-anchor="middle" opacity="0.7">
+    Clinic Interior Placeholder
+  </text>
+</svg>

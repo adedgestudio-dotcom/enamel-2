@@ -1,0 +1,16 @@
+{
+  "name": "Enamel Dental Clinic",
+  "short_name": "Enamel Dental",
+  "description": "Professional Dental Care in Madhavaram, Chennai",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1B2A4A",
+  "theme_color": "#1B2A4A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

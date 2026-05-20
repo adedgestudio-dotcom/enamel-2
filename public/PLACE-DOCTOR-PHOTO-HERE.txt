@@ -1,0 +1,10 @@
+📸 ADD DOCTOR PHOTO HERE
+
+1. Save the doctor photo (man in blue shirt at desk with green wall)
+2. Rename it to: doctor.jpg
+3. Place it in THIS folder (public folder)
+4. Restart the dev server
+
+The website will automatically use it!
+
+Current status: Using placeholder image

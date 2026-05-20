@@ -1,0 +1,9 @@
+@echo off
+echo Stopping any running Node processes...
+taskkill /F /IM node.exe 2>nul
+
+echo Clearing cache...
+if exist .next rmdir /s /q .next
+
+echo Starting development server...
+npm run dev
