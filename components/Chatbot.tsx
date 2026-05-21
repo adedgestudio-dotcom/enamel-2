@@ -115,12 +115,12 @@ export default function Chatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 group"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 group"
           aria-label="Open chat"
         >
           {/* Main button */}
           <div
-            className="relative w-16 h-16 rounded-full
+            className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full
                           bg-gradient-to-br from-navy-700 via-navy-800 to-navy-900
                           shadow-2xl shadow-navy-900/50
                           flex items-center justify-center
@@ -129,7 +129,7 @@ export default function Chatbot() {
           >
             {/* Icon */}
             <svg
-              className="w-8 h-8 text-gold-400"
+              className="w-7 h-7 sm:w-8 sm:h-8 text-gold-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -148,15 +148,15 @@ export default function Chatbot() {
             />
             {/* Online indicator */}
             <span
-              className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full
+              className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full
                            border-2 border-white shadow-lg flex items-center justify-center"
             >
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-pulse" />
             </span>
           </div>
-          {/* Tooltip */}
+          {/* Tooltip - hidden on mobile */}
           <div
-            className="absolute bottom-full right-0 mb-3 px-4 py-2 bg-navy-900 text-white
+            className="hidden sm:block absolute bottom-full right-0 mb-3 px-4 py-2 bg-navy-900 text-white
                           text-sm font-medium rounded-lg shadow-xl whitespace-nowrap
                           opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
           >
@@ -172,33 +172,36 @@ export default function Chatbot() {
       {/* Chat Window */}
       {isOpen && (
         <div
-          className="fixed bottom-6 right-6 z-50 w-[380px] h-[600px] max-h-[80vh]
+          className="fixed inset-4 sm:bottom-6 sm:right-6 sm:left-auto sm:top-auto z-50
+                        sm:w-[380px] sm:h-[600px] sm:max-h-[80vh]
                         bg-white rounded-2xl shadow-2xl flex flex-col
                         border border-navy-100 overflow-hidden
                         animate-fade-up"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-navy-900 to-navy-800 p-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gold-400 flex items-center justify-center">
-                <span className="text-navy-900 font-bold text-lg">E</span>
+          <div className="bg-gradient-to-r from-navy-900 to-navy-800 p-3 sm:p-4 flex items-center justify-between">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-400 flex items-center justify-center flex-shrink-0">
+                <span className="text-navy-900 font-bold text-base sm:text-lg">
+                  E
+                </span>
               </div>
               <div>
-                <h3 className="font-semibold text-white text-sm">
+                <h3 className="font-semibold text-white text-xs sm:text-sm">
                   Enamel -2 Assistant
                 </h3>
-                <p className="text-xs text-white/60">
+                <p className="text-[10px] sm:text-xs text-white/60">
                   Online • Replies instantly
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-white/60 hover:text-white transition-colors"
+              className="text-white/60 hover:text-white transition-colors flex-shrink-0"
               aria-label="Close chat"
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -214,7 +217,7 @@ export default function Chatbot() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-gray-50">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
@@ -223,15 +226,17 @@ export default function Chatbot() {
                 }`}
               >
                 <div
-                  className={`max-w-[75%] rounded-2xl px-4 py-2.5 ${
+                  className={`max-w-[80%] sm:max-w-[75%] rounded-2xl px-3 py-2 sm:px-4 sm:py-2.5 ${
                     msg.isBot
                       ? "bg-white text-navy-900 shadow-sm border border-navy-100"
                       : "bg-gradient-to-r from-gold-400 to-gold-500 text-navy-900"
                   }`}
                 >
-                  <p className="text-sm leading-relaxed">{msg.text}</p>
+                  <p className="text-xs sm:text-sm leading-relaxed">
+                    {msg.text}
+                  </p>
                   <span
-                    className={`text-[10px] mt-1 block ${
+                    className={`text-[9px] sm:text-[10px] mt-1 block ${
                       msg.isBot ? "text-navy-400" : "text-navy-700"
                     }`}
                   >
@@ -248,16 +253,16 @@ export default function Chatbot() {
 
           {/* Quick Replies */}
           {messages.length <= 2 && (
-            <div className="px-4 py-3 bg-white border-t border-navy-100">
-              <p className="text-xs text-navy-500 mb-2 font-medium">
+            <div className="px-3 py-2 sm:px-4 sm:py-3 bg-white border-t border-navy-100">
+              <p className="text-[10px] sm:text-xs text-navy-500 mb-2 font-medium">
                 Quick options:
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {quickReplies.map((reply, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleQuickReply(reply)}
-                    className="text-xs px-3 py-1.5 rounded-full
+                    className="text-[10px] sm:text-xs px-2.5 py-1.5 sm:px-3 rounded-full
                                bg-navy-50 text-navy-700 border border-navy-200
                                hover:bg-navy-100 hover:border-navy-300
                                transition-colors"
@@ -270,7 +275,7 @@ export default function Chatbot() {
           )}
 
           {/* Input */}
-          <div className="p-4 bg-white border-t border-navy-100">
+          <div className="p-3 sm:p-4 bg-white border-t border-navy-100">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -278,19 +283,19 @@ export default function Chatbot() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSend()}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-2.5 rounded-xl border border-navy-200
+                className="flex-1 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-navy-200
                            focus:outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20
-                           text-sm text-navy-900 placeholder:text-navy-400"
+                           text-xs sm:text-sm text-navy-900 placeholder:text-navy-400"
               />
               <button
                 onClick={handleSend}
                 disabled={!inputValue.trim()}
-                className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500
+                className="px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500
                            text-navy-900 font-medium hover:shadow-lg hover:shadow-gold-500/30
-                           transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                           transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
