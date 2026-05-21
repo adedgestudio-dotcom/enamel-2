@@ -172,8 +172,8 @@ export default function Chatbot() {
       {/* Chat Window */}
       {isOpen && (
         <div
-          className="fixed inset-4 sm:bottom-6 sm:right-6 sm:left-auto sm:top-auto z-50
-                        sm:w-[380px] sm:h-[600px] sm:max-h-[80vh]
+          className="fixed bottom-4 right-4 left-4 sm:bottom-6 sm:right-6 sm:left-auto z-50
+                        h-[500px] sm:w-[380px] sm:h-[600px] max-h-[70vh] sm:max-h-[80vh]
                         bg-white rounded-2xl shadow-2xl flex flex-col
                         border border-navy-100 overflow-hidden
                         animate-fade-up"
